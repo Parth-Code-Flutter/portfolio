@@ -342,6 +342,7 @@ p {
 .content-panel,
 .experience-card,
 .project-card,
+.repo-card,
 .skills-grid article,
 .contact-card {
   border: 1px solid var(--border);
@@ -502,6 +503,41 @@ p {
   background: rgba(244, 199, 107, 0.08);
 }
 
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.repo-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
+}
+
+.repo-card h3 {
+  margin: 8px 0 10px;
+  font-size: 1.35rem;
+}
+
+.repo-card p {
+  max-width: 560px;
+}
+
+.repo-type {
+  display: inline-flex;
+  padding: 7px 10px;
+  border: 1px solid rgba(114, 183, 255, 0.28);
+  border-radius: 8px;
+  color: var(--accent-2);
+  background: rgba(114, 183, 255, 0.08);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -578,6 +614,7 @@ footer p {
   .hero-section,
   .about-grid,
   .projects-grid,
+  .repo-grid,
   .skills-grid {
     grid-template-columns: 1fr;
   }
@@ -650,8 +687,13 @@ footer p {
 
   .metric-grid,
   .focus-list,
+  .repo-grid,
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+
+  .repo-card {
+    flex-direction: column;
   }
 
   .experience-card {
